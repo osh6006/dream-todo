@@ -21,7 +21,7 @@ function App() {
         <TodoItems todos={todos} />
 
         {/* AddForm */}
-        <AddForm />
+        <AddForm todos={todos} setTodos={setTodos} />
       </TodoContainer>
     </div>
   );
