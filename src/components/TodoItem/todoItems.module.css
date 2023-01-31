@@ -1,0 +1,40 @@
+.container {
+  background-color: rgb(37, 37, 63);
+  padding: 20px;
+  box-sizing: border-box;
+  flex-grow: 8;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  accent-color: orange;
+  color: white;
+  /* text-decoration:line-through */
+}
+
+input[type="checkbox"] {
+  transform: scale(1.5);
+  margin-right: 20px;
+}
+
+.delete {
+  background-color: cornflowerblue;
+  border-radius: 50%;
+  width: 20px;
+  cursor: pointer;
+  padding: 3px 6px;
+}
+
+.delete:hover {
+  transform: scale(1.12);
+  transform: rotate(-20deg);
+  transition: all 0.1s ease-in-out;
+}

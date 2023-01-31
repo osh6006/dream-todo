@@ -1,0 +1,13 @@
+.tab {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: orange;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 3px;
+}
+
+.tab:hover {
+  border-bottom: 2px solid white;
+}
