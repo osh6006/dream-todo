@@ -18,7 +18,7 @@ function App() {
         <TopMenu />
 
         {/* TodoItem */}
-        <TodoItems todos={todos} />
+        <TodoItems todos={todos} setTodos={setTodos} />
 
         {/* AddForm */}
         <AddForm todos={todos} setTodos={setTodos} />

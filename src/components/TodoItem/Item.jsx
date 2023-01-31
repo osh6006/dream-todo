@@ -1,14 +1,18 @@
 import React from "react";
 import styles from "./todoItems.module.css";
 
-export const Item = ({ contents }) => {
+export const Item = ({ contents, id, setTodos, todos }) => {
+  const handleDelete = () => {
+    const deletedTodo = [...todos].filter((el, i) => i !== id);
+    setTodos(deletedTodo);
+  };
   return (
     <div className={styles.item}>
       <div className={styles.check}>
-        <input type="checkbox" name="item" id="item" />
-        <label htmlFor="item">{contents}</label>
+        <input type="checkbox" name={id} id={id} />
+        <label htmlFor={id}>{contents}</label>
       </div>
-      <div className={styles.delete}>
+      <div className={styles.delete} onClick={handleDelete}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
