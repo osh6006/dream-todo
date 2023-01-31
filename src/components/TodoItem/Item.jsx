@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./todoItems.module.css";
 
 export const Item = ({ contents, id, setTodos, todos, isCheck }) => {
@@ -21,7 +21,7 @@ export const Item = ({ contents, id, setTodos, todos, isCheck }) => {
           name={id}
           id={id}
           checked={isCheck}
-          onClick={handleCheck}
+          onChange={handleCheck}
         />
         {isCheck ? (
           <label htmlFor={id} style={{ textDecoration: "line-through" }}>

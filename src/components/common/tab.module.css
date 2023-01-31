@@ -7,7 +7,3 @@
   cursor: pointer;
   padding: 3px;
 }
-
-.tab:hover {
-  border-bottom: 2px solid white;
-}

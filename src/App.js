@@ -11,11 +11,12 @@ function App() {
     { contents: "카페 가기", completed: false },
     { contents: "청소 하기", completed: false },
   ]);
+
   return (
     <div className="App">
       <TodoContainer>
         {/* TopMenu */}
-        <TopMenu />
+        <TopMenu todos={todos} setTodos={setTodos} />
 
         {/* TodoItem */}
         <TodoItems todos={todos} setTodos={setTodos} />

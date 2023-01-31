@@ -1,8 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { Tab } from "../common/Tap";
 import styles from "./TopMenu.module.css";
 
-export const TopMenu = () => {
+export const TopMenu = ({ todos, setTodos }) => {
+  const [menuState, setMenuState] = useState({
+    all: true,
+    active: false,
+    completed: false,
+  });
+
+  const handleAll = () => {
+    const allTodos = [...todos];
+    setMenuState({
+      all: true,
+      active: false,
+      completed: false,
+    });
+  };
+  const handleActive = () => {
+    const activeTodos = [...todos].filter(el => el.completed === false);
+    setTodos(activeTodos);
+    setMenuState({
+      all: false,
+      active: true,
+      completed: false,
+    });
+  };
+  const handleCompleted = () => {
+    const completedTodos = [...todos].filter(el => el.completed === true);
+    setTodos(completedTodos);
+    setMenuState({
+      all: false,
+      active: false,
+      completed: true,
+    });
+  };
   return (
     <div className={styles.menu}>
       <div className={styles.mode}>
@@ -30,15 +62,39 @@ export const TopMenu = () => {
       </div>
 
       <ul>
-        <li>
-          <Tab text="All" />
-        </li>
-        <li>
-          <Tab text="Active" />
-        </li>
-        <li>
-          <Tab text="Completed" />
-        </li>
+        {menuState.all ? (
+          <li onClick={handleAll} style={{ borderBottom: "2px solid white" }}>
+            <Tab text="All" />
+          </li>
+        ) : (
+          <li onClick={handleAll}>
+            <Tab text="All" />
+          </li>
+        )}
+        {menuState.active ? (
+          <li
+            onClick={handleActive}
+            style={{ borderBottom: "2px solid white" }}
+          >
+            <Tab text="Active" />
+          </li>
+        ) : (
+          <li onClick={handleActive}>
+            <Tab text="Active" />
+          </li>
+        )}
+        {menuState.completed ? (
+          <li
+            onClick={handleCompleted}
+            style={{ borderBottom: "2px solid white" }}
+          >
+            <Tab text="Completed" />
+          </li>
+        ) : (
+          <li onClick={handleCompleted}>
+            <Tab text="Completed" />
+          </li>
+        )}
       </ul>
     </div>
   );
