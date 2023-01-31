@@ -12,6 +12,7 @@ export const TodoItems = ({ todos, setTodos }) => {
           id={i}
           setTodos={setTodos}
           todos={todos}
+          isCheck={el.completed}
         />
       ))}
     </div>

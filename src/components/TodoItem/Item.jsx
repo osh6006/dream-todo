@@ -1,16 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./todoItems.module.css";
 
-export const Item = ({ contents, id, setTodos, todos }) => {
+export const Item = ({ contents, id, setTodos, todos, isCheck }) => {
   const handleDelete = () => {
-    const deletedTodo = [...todos].filter((el, i) => i !== id);
-    setTodos(deletedTodo);
+    const deletedTodos = [...todos].filter((el, i) => i !== id);
+    setTodos(deletedTodos);
   };
+  const handleCheck = e => {
+    const Index = [...todos].findIndex((el, i) => i === id);
+    const newTodos = [...todos];
+    newTodos[Index].completed = !isCheck;
+    setTodos(newTodos);
+  };
+
   return (
     <div className={styles.item}>
       <div className={styles.check}>
-        <input type="checkbox" name={id} id={id} />
-        <label htmlFor={id}>{contents}</label>
+        <input
+          type="checkbox"
+          name={id}
+          id={id}
+          checked={isCheck}
+          onClick={handleCheck}
+        />
+        {isCheck ? (
+          <label htmlFor={id} style={{ textDecoration: "line-through" }}>
+            {contents}
+          </label>
+        ) : (
+          <label htmlFor={id}>{contents}</label>
+        )}
       </div>
       <div className={styles.delete} onClick={handleDelete}>
         <svg
