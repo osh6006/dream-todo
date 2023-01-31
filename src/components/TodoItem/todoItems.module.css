@@ -2,6 +2,15 @@
   background-color: rgb(37, 37, 63);
   padding: 20px;
   box-sizing: border-box;
+  color: white;
+  flex-grow: 8;
+}
+
+.whiteContainer {
+  background-color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  color: darkgray;
   flex-grow: 8;
 }
 
@@ -9,7 +18,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: white;
   margin-top: 5px;
 }
 
@@ -17,7 +25,6 @@
   display: flex;
   align-items: center;
   accent-color: orange;
-  color: white;
   /* text-decoration:line-through */
 }
 

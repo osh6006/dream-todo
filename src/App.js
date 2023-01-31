@@ -4,6 +4,7 @@ import { AddForm } from "./components/AddForm/AddForm";
 import { TodoContainer } from "./components/TodoContainer";
 import { TodoItems } from "./components/TodoItem/TodoItems";
 import { TopMenu } from "./components/TopMenu/TopMenu";
+import { DarkModeProvider } from "./context/DarkModeContext";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -14,16 +15,18 @@ function App() {
 
   return (
     <div className="App">
-      <TodoContainer>
-        {/* TopMenu */}
-        <TopMenu todos={todos} setTodos={setTodos} />
+      <DarkModeProvider>
+        <TodoContainer>
+          {/* TopMenu */}
+          <TopMenu todos={todos} setTodos={setTodos} />
 
-        {/* TodoItem */}
-        <TodoItems todos={todos} setTodos={setTodos} />
+          {/* TodoItem */}
+          <TodoItems todos={todos} setTodos={setTodos} />
 
-        {/* AddForm */}
-        <AddForm todos={todos} setTodos={setTodos} />
-      </TodoContainer>
+          {/* AddForm */}
+          <AddForm todos={todos} setTodos={setTodos} />
+        </TodoContainer>
+      </DarkModeProvider>
     </div>
   );
 }
