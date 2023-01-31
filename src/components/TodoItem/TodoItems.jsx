@@ -2,10 +2,12 @@ import React from "react";
 import { Item } from "./Item";
 import styles from "./todoItems.module.css";
 
-export const TodoItems = () => {
+export const TodoItems = ({ todos }) => {
   return (
     <div className={styles.container}>
-      <Item />
+      {todos.map(el => (
+        <Item contents={el.contents} />
+      ))}
     </div>
   );
 };

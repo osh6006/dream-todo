@@ -10,6 +10,7 @@
   align-items: center;
   justify-content: space-between;
   color: white;
+  margin-top: 5px;
 }
 
 .check {
@@ -28,7 +29,7 @@ input[type="checkbox"] {
 .delete {
   background-color: cornflowerblue;
   border-radius: 50%;
-  width: 20px;
+  width: 15px;
   cursor: pointer;
   padding: 3px 6px;
 }

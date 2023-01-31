@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./todoItems.module.css";
 
-export const Item = () => {
+export const Item = ({ contents }) => {
   return (
     <div className={styles.item}>
       <div className={styles.check}>
         <input type="checkbox" name="item" id="item" />
-        <label htmlFor="item">공부하기</label>
+        <label htmlFor="item">{contents}</label>
       </div>
       <div className={styles.delete}>
         <svg
